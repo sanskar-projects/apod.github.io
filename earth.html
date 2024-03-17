@@ -1,0 +1,30 @@
+<html>
+<head>
+<style>
+img{height:250px; width:500px;}
+</style>
+</head>
+<body>
+<img id="image"><br>
+<p id="date"></p><br>
+<p id="id"></p>
+
+<script>
+const url="https://api.nasa.gov/planetary/earth/assets?lon=-95.33&lat=29.78&date=2018-01-01&&dim=0.10&api_key=";
+const api_key="cixz4I9UTkxdUVkiqdfzY3gitaatNfN7qcTu5WGy";
+const fetchData=async()=>
+{
+const response=await fetch(`${url}${api_key}`);
+const data= await response.json();
+display(data);
+}
+function display(data)
+{
+document.getElementById("image").src=data.url;
+document.getElementById("date").innerHTML=data.date;
+document.getElementById("id").innerHTML=data.id;
+}
+fetchData();
+</script>
+</body>
+</html>
