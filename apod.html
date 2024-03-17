@@ -1,0 +1,32 @@
+<html>
+<head>
+<style>
+img{height:250px; width:500px;}
+</style>
+</head>
+<body>
+<p id="title"></p><br>
+<img id="image"><br>
+<p id="explanation"></p><br>
+<p id="date"></p>
+
+<script>
+const url="https://api.nasa.gov/planetary/apod?api_key=";
+const api_key="cixz4I9UTkxdUVkiqdfzY3gitaatNfN7qcTu5WGy";
+const fetchData=async()=>
+{
+const response=await fetch(`${url}${api_key}`);
+const data= await response.json();
+display(data);
+}
+function display(data)
+{
+document.getElementById("image").src=data.hdurl;
+document.getElementById("title").innerHTML=data.title;
+document.getElementById("explanation").innerHTML=data.explanation;
+document.getElementById("date").innerHTML=data.date;
+}
+fetchData();
+</script>
+</body>
+</html>
