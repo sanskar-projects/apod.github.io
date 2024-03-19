@@ -1,45 +1,58 @@
 <html>
 <head>
 <style>
-img{height:250px; width:500px;}
+img{height:500px; width:500px;}
 </style>
 </head>
 <body>
-<input type="text" id="key_in">
-<button onclick="set();">set</button><br>
-<img id="IMG"><br>
-<p id="date">date</p><br>
+<div>
+<img id="IMG">
+<p id="desc" style="float:right;"></p>
+</div>
+
+
+
 <button onclick="slide(-1)"><<</button>
 <button style="background-color:white;" id="SN">1 of 4</button>
 <button onclick="slide(1)">>></button><br>
 <input type="date" id="DATE" value="2015-06-03"><br>
+API key: <input type="text" id="key_in" value="">
+<button onclick="set();">default</button><br>
 <button onclick="fetchData();">search</button>
-<p id="key_out" style="color:red;">api key is required</p>
+
+
+
+
 
 <script>
 const url="https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?api_key=";
-var api_key="cixz4I9UTkxdUVkiqdfzY3gitaatNfN7qcTu5WGy";
 var i=0;
 
 const fetchData=async()=>
 {
-try
-{
+const api_key=document.getElementById("key_in").value;
 var date="&earth_date="+document.getElementById("DATE").value;
 const response=await fetch(`${url}${api_key}${date}`);
-const data= await response.json();
+const data=await response.json();
 display(data);
-}
-catch
-{
-alert("please check the api key");
-}
 }
 
 function display(data)
 {
 document.getElementById("IMG").src=data.photos[i].img_src;
-document.getElementById("SN").innerHTML=(i+1)+"/"+data.photos.length;
+document.getElementById("SN").innerHTML="image "+(i+1)+" of "+data.photos.length;
+var s="";
+s+="<br>sol: "+data.photos[i].sol;
+s+="<br>camera: "+data.photos[i].camera.full_name;
+s+="<br>earth date: "+data.photos[i].earth_date;
+s+="<br>rover: "+data.photos[i].rover.name;
+s+="<br>landing date: "+data.photos[i].rover.landing_date;
+s+="<br>launch date: "+data.photos[i].rover.launch_date;
+s+="<br>status: "+data.photos[i].rover.status;
+s+="<br>max sol: "+data.photos[i].rover.max_sol;
+s+="<br>max date: "+data.photos[i].rover.max_date;
+s+="<br>total photos: "+data.photos[i].rover.total_photos;
+document.getElementById("desc").innerHTML=s;
 }
 
 function slide(x)
@@ -50,14 +63,9 @@ fetchData();
 
 function set()
 {
-if(document.getElementById("key_in").value!="")
-{
-api_key=document.getElementById("key_in").value;
-document.getElementById("key_in").value="";
-document.getElementById("key_out").innerHTML="api key: "+api_key;
-document.getElementById("key_out").style.color="green";
+document.getElementById("key_in").value="DEMO_KEY";
 }
-}
+
 </script>
 </body>
 </html>
