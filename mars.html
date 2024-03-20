@@ -34,8 +34,8 @@ const fetchData=async()=>
 const api_key=document.getElementById("key_in").value;
 var date="&earth_date="+document.getElementById("DATE").value;
 const response=await fetch(`${url}${api_key}${date}`);
-data=await response.json();
-var x="bject.assign({},data)";
+var x=await response.json();
+data=Object.assign({},data);
 alert(x.photos[0].sol);
 display();
 }
