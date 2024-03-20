@@ -35,7 +35,7 @@ const api_key=document.getElementById("key_in").value;
 var date="&earth_date="+document.getElementById("DATE").value;
 const response=await fetch(`${url}${api_key}${date}`);
 const data=await response.json();
-x=object.assign({},data);
+x=Object.assign({},data);
 alert(x.photos[0].sol);
 display(data);
 }
