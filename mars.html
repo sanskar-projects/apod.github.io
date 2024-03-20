@@ -35,6 +35,7 @@ const api_key=document.getElementById("key_in").value;
 var date="&earth_date="+document.getElementById("DATE").value;
 const response=await fetch(`${url}${api_key}${date}`);
 var _data=await response.json();
+data={};
 data=Object.assign({},_data);
 display();
 }
