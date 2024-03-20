@@ -27,20 +27,20 @@ API key: <input type="text" id="key_in" value="">
 <script>
 const url="https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?api_key=";
 var i=0;
-var x;
+var data;
 
 const fetchData=async()=>
 {
 const api_key=document.getElementById("key_in").value;
 var date="&earth_date="+document.getElementById("DATE").value;
 const response=await fetch(`${url}${api_key}${date}`);
-const data=await response.json();
-x=Object.assign({},data);
+data=await response.json();
+var x="bject.assign({},data)";
 alert(x.photos[0].sol);
-display(data);
+display();
 }
 
-function display(data)
+function display()
 {
 document.getElementById("IMG").src=data.photos[i].img_src;
 document.getElementById("SN").innerHTML="image "+(i+1)+" of "+data.photos.length;
