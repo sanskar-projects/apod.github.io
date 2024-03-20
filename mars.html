@@ -36,7 +36,7 @@ var date="&earth_date="+document.getElementById("DATE").value;
 const response=await fetch(`${url}${api_key}${date}`);
 var x=await response.json();
 data=Object.assign({},data);
-alert(x.photos[0].sol);
+alert(data.photos[0].sol);
 display();
 }
 
