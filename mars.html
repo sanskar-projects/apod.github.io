@@ -16,8 +16,10 @@ img{height:500px; width:500px;}
 <button style="background-color:white;" id="SN">1 of 4</button>
 <button onclick="slide(1)">>></button><br>
 <input type="date" id="DATE" value="2015-06-03"><br>
-API key: <input type="text" id="key_in" value="">
-<button onclick="set();">default</button><br>
+API key: <input type="text" id="key_in" value="DEMO_KEY"><br>
+<input type="radio" id="r1" name="0" checked>curiosity<br>
+<input type="radio" id="r2" name="0">opportunity<br>
+<input type="radio" id="r3" name="0">spirit<br>
 <button onclick="fetchData();">search</button>
 
 
@@ -25,22 +27,27 @@ API key: <input type="text" id="key_in" value="">
 
 
 <script>
-const url="https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?api_key=";
+const _url="https://api.nasa.gov/mars-photos/api/v1/rovers/"
 var i=0;
-var data;
+var rover;
 
 const fetchData=async()=>
 {
+if(document.getElementById("r1").checked==true)
+{rover="curiosity";}
+if(document.getElementById("r2").checked==true)
+{rover="opportunity";}
+if(document.getElementById("r3").checked==true)
+{rover="spirit";}
+const url=_url+rover+"/photos?api_key="
 const api_key=document.getElementById("key_in").value;
 var date="&earth_date="+document.getElementById("DATE").value;
 const response=await fetch(`${url}${api_key}${date}`);
-var _data=await response.json();
-data={};
-data=Object.assign({},_data);
-display();
+const data=await response.json();
+display(data);
 }
 
-function display()
+function display(data)
 {
 document.getElementById("IMG").src=data.photos[i].img_src;
 document.getElementById("SN").innerHTML="image "+(i+1)+" of "+data.photos.length;
@@ -61,12 +68,7 @@ document.getElementById("desc").innerHTML=s;
 function slide(x)
 {
 i+=x;
-display();
-}
-
-function set()
-{
-document.getElementById("key_in").value="DEMO_KEY";
+fetchData();
 }
 
 </script>
