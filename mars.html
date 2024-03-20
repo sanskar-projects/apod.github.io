@@ -34,9 +34,8 @@ const fetchData=async()=>
 const api_key=document.getElementById("key_in").value;
 var date="&earth_date="+document.getElementById("DATE").value;
 const response=await fetch(`${url}${api_key}${date}`);
-var x=await response.json();
-data=Object.assign({},x);
-alert(data.photos[0].sol);
+var _data=await response.json();
+data=Object.assign({},_data);
 display();
 }
 
@@ -61,7 +60,7 @@ document.getElementById("desc").innerHTML=s;
 function slide(x)
 {
 i+=x;
-fetchData();
+display();
 }
 
 function set()
