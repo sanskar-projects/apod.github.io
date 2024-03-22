@@ -16,11 +16,20 @@ p{color:white;}
 <button onclick="slide(1)">>></button><br>
 <input type="date" id="DATE" value="2015-06-03"><br>
 API key: <input type="text" id="key_in" value="DEMO_KEY"><br>
-<input type="radio" id="r1" name="0" checked>curiosity<br>
-<input type="radio" id="r2" name="0">opportunity<br>
-<input type="radio" id="r3" name="0">spirit<br>
+<input type="radio" id="r1" name="0"  onclick="about();" checked>curiosity<br>
+<input type="radio" id="r2" name="0" onclick="about();">opportunity<br>
+<input type="radio" id="r3" name="0" onclick="about();">spirit<br>
 <button onclick="fetchData();">search</button>
 </fieldset>
+</div></div>
+
+
+
+
+<div>
+<img id="roverIMG">
+<div style="float:right;">
+<p id="about"></p><br>
 </div></div>
 
 
@@ -43,7 +52,7 @@ if(document.getElementById("r2").checked==true)
 {rover="opportunity";}
 if(document.getElementById("r3").checked==true)
 {rover="spirit";}
-const url=_url+rover+"/photos?api_key="
+const url=_url+rover+"/photos?api_key=";
 const api_key=document.getElementById("key_in").value;
 var date="&earth_date="+document.getElementById("DATE").value;
 const response=await fetch(`${url}${api_key}${date}`);
@@ -74,6 +83,22 @@ function slide(x)
 {
 i+=x;
 fetchData();
+}
+
+function about()
+{
+document.getElementById("roverDESC").src="curiosity.jpg";
+document.getElementById("about").innerHTML="";
+if(document.getElementById("r2").checked==true)
+{
+document.getElementById("roverDESC").src="opportunity.jpg";
+document.getElementById("about").innerHTML="";
+}
+if(document.getElementById("r3").checked==true)
+{
+document.getElementById("roverDESC").src="spirit.jpg";
+document.getElementById("about").innerHTML="";
+}
 }
 
 </script>
