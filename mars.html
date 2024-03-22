@@ -1,13 +1,13 @@
 <html>
 <head>
 <style>
-img{height:500px; width:500px;}
+img{height:500px; width:1000px;}
 p{color:white;}
 </style>
 </head>
 <body style="background-color:black;">
 <div>
-<img id="IMG">
+<a id="link"><img id="IMG"></a>
 <div style="float:right;">
 <p id="desc"></p><br>
 <fieldset style="background-color:white;">
@@ -54,6 +54,7 @@ display(data);
 function display(data)
 {
 document.getElementById("IMG").src=data.photos[i].img_src;
+document.getElementById("link").href=data.photos[i].img_src;
 document.getElementById("SN").innerHTML="image "+(i+1)+" of "+data.photos.length;
 var s="";
 s+="<br>sol: "+data.photos[i].sol;
