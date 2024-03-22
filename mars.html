@@ -27,9 +27,9 @@ API key: <input type="text" id="key_in" value="DEMO_KEY"><br>
 
 
 <div>
-<img id="roverIMG">
+<img id="rover">
 <div style="float:right;">
-<p id="about"></p><br>
+<p id="about"></p>
 </div></div>
 
 
@@ -87,17 +87,17 @@ fetchData();
 
 function about()
 {
-document.getElementById("roverDESC").src="curiosity.jpg";
-document.getElementById("about").innerHTML="";
+document.getElementById("rover").src="curiosity.jpg";
+document.getElementById("about").innerHTML="landing date: 2012-08-06<br>max date: 2024-02-19";
 if(document.getElementById("r2").checked==true)
 {
-document.getElementById("roverDESC").src="opportunity.jpg";
-document.getElementById("about").innerHTML="";
+document.getElementById("rover").src="opportunity.jpg";
+document.getElementById("about").innerHTML="landing date: 2004-01-25<br>max date: 2018-06-11";
 }
 if(document.getElementById("r3").checked==true)
 {
-document.getElementById("roverDESC").src="spirit.jpg";
-document.getElementById("about").innerHTML="";
+document.getElementById("rover").src="spirit.jpg";
+document.getElementById("about").innerHTML="landing date: 2004-01-04<br>max date: 2010-03-21";
 }
 }
 
