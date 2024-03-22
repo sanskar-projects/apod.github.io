@@ -27,7 +27,6 @@ API key: <input type="text" id="key_in" value="DEMO_KEY"><br>
 
 
 
-<p id="about"></p>
 
 
 
@@ -85,17 +84,18 @@ fetchData();
 
 function about()
 {
+s="https://en.wikipedia.org/wiki/";
 document.getElementById("rover").src="curiosity.jpg";
-document.getElementById("about").innerHTML="landing date: 2012-08-06<br>max date: 2024-02-19<br>Curiosity is a car-sized Mars rover exploring Gale crater and Mount Sharp on Mars as part of NASA's Mars Science Laboratory (MSL) mission.<br>Curiosity was launched from Cape Canaveral (CCAFS) on November 26,2011,<br>at 15:02:00 UTC and landed on Aeolis Palus inside Gale crater on Mars on August 6, 2012, 05:17:57 UTC. The Bradbury Landing site was less than 2.4 km (1.5 mi) from the center of the rover's touchdown target after a 560 million km (350 million mi) journey.";
+document.getElementById("roverLINK").href=s+"Curiosity_(rover)";
 if(document.getElementById("r2").checked==true)
 {
 document.getElementById("rover").src="opportunity.jpg";
-document.getElementById("about").innerHTML="landing date: 2004-01-25<br>max date: 2018-06-11";
+document.getElementById("roverLINK").href=s+"Opportunity_(rover)";
 }
 if(document.getElementById("r3").checked==true)
 {
 document.getElementById("rover").src="spirit.jpg";
-document.getElementById("about").innerHTML="landing date: 2004-01-04<br>max date: 2010-03-21";
+document.getElementById("roverLINK").href=s+"Spirit_(rover)";
 }
 }
 
