@@ -41,6 +41,7 @@ API key: <input type="text" id="key_in" value="DEMO_KEY"><br>
 const _url="https://api.nasa.gov/mars-photos/api/v1/rovers/"
 var i=0;
 var rover;
+var data;
 
 const fetchData=async()=>
 {
@@ -53,11 +54,16 @@ const url=_url+rover+"/photos?api_key=";
 const api_key=document.getElementById("key_in").value;
 var date="&earth_date="+document.getElementById("DATE").value;
 const response=await fetch(`${url}${api_key}${date}`);
-const data=await response.json();
-display(data);
+const _data=await response.json();
+data={};
+data=Object.assign({},data,_data);
+
+
+
+display();
 }
 
-function display(data)
+function display()
 {
 document.getElementById("IMG").src=data.photos[i].img_src;
 document.getElementById("link").href=data.photos[i].img_src;
