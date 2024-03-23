@@ -51,18 +51,22 @@ const _url="https://api.nasa.gov/mars-photos/api/v1/rovers/"
 var i=0;
 var rover;
 var data;
-var con;
 
 const fetchData=async()=>
 {
-document.getElementById("IMG").src="spirit.jpg";
-document.getElementById("desc").innerHTML="loading";
-
+document.getElementById("IMG").src="curiosity.jpg";
 rover="curiosity";
 if(document.getElementById("r2").checked==true)
-{rover="opportunity";}
+{
+document.getElementById("IMG").src="opportunity.jpg";
+rover="opportunity";
+}
 if(document.getElementById("r3").checked==true)
-{rover="spirit";}
+{
+document.getElementById("IMG").src="spirit.jpg";
+rover="spirit";
+}
+document.getElementById("desc").innerHTML="CONNECTING";
 i=0;
 const url=_url+rover+"/photos?api_key=";
 const api_key=document.getElementById("key_in").value;
