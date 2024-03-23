@@ -29,7 +29,7 @@ API key: <input type="text" id="key_in" value="DEMO_KEY"><br>
 <input type="radio" id="r3" name="0" onclick="about();">spirit<br>
 <button onclick="fetchData();">search</button>
 </fieldset>
-<div style="float:right;">
+<div style="float:right;" id="load" hidden>
 <p style="color:yellow;">CONNECTING</p>
 <marquee direction="right" style="height:10px; width:250px; border-color:white; border-style:solid;">
 <div style="height:100%; width:10%; background-color:yellow;"></div>
@@ -60,6 +60,7 @@ var data;
 
 const fetchData=async()=>
 {
+document.getElementById("load").removeAttribute("hidden");
 rover="curiosity";
 if(document.getElementById("r2").checked==true)
 {rover="opportunity";}
