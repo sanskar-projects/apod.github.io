@@ -13,9 +13,12 @@ p{color:white;}
 <p id="desc"></p><br>
 <a id="roverLINK"><img id="rover" style="height:250px; width:250px;"></a>
 </div>
-<fieldset>
+</fieldset>
 </div>
-<fieldset style="background-color:white;">
+<br>
+
+<div>
+<fieldset style="background-color:white; float:left;">
 <button onclick="slide(-1)"><<</button>
 <button style="background-color:white;" id="SN">1 of 4</button>
 <button onclick="slide(1)">>></button><br>
@@ -26,12 +29,15 @@ API key: <input type="text" id="key_in" value="DEMO_KEY"><br>
 <input type="radio" id="r3" name="0" onclick="about();">spirit<br>
 <button onclick="fetchData();">search</button>
 </fieldset>
-<h1 style="color:red;">LOADING</h1>
-<fieldset style="height:10px; width:300px;">
-<marquee direction="right">
-<div style="height:10px; width:100px; background-color:red;"></div>
+<div style="float:right;">
+<p style="color:red;">connecting to https://api.nasa.gov/</p>
+<marquee direction="right" style="height:10px; width:250px; background-color:white;">
+<div style="height:100%; width:10%; background-color:red;"></div>
 </marquee>
-</fieldset>
+</div>
+</div>
+
+
 
 
 
