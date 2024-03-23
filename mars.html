@@ -58,7 +58,7 @@ const response=await fetch(`${url}${api_key}${date}`);
 const _data=await response.json();
 if(_data.photos.length==0)
 {
-alert("NO DATA FOUND<br>The selected date seems to be out of selected rover's active time on Mars.<br>Try selecting another date or rover");
+alert("DATA NOT FOUND, the date selected seems to be out of selected rover's active time on Mars, try selecting another date or rover.");
 return;
 }
 data={};
