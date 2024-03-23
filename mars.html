@@ -102,6 +102,7 @@ s+="<br>max sol: "+data.photos[i].rover.max_sol;
 s+="<br>max date: "+data.photos[i].rover.max_date;
 s+="<br>total photos: "+data.photos[i].rover.total_photos;
 document.getElementById("desc").innerHTML=s;
+document.getElementById("load").setAttribute("hidden");
 }
 
 function slide(x)
