@@ -29,12 +29,6 @@ API key: <input type="text" id="key_in" value="DEMO_KEY"><br>
 <input type="radio" id="r3" name="0" onclick="about();">spirit<br>
 <button onclick="fetchData();">search</button>
 </fieldset>
-<div style="float:right;" id="con">
-<p style="color:yellow;">CONNECTING</p>
-<marquee direction="right" style="height:10px; width:250px; border-color:white; border-style:solid;">
-<div style="height:100%; width:10%; background-color:yellow;"></div>
-</marquee>
-</div>
 </div>
 
 
@@ -61,7 +55,6 @@ var con;
 
 const fetchData=async()=>
 {
-con=setInterval(connecting,1000);
 rover="curiosity";
 if(document.getElementById("r2").checked==true)
 {rover="opportunity";}
@@ -125,17 +118,6 @@ if(document.getElementById("r3").checked==true)
 {
 document.getElementById("rover").src="spirit.jpg";
 document.getElementById("roverLINK").href=s+"Spirit_(rover)";
-}
-}
-
-function connecting()
-{
-if(data=={})
-{document.getElementById("con").style.display="block";}
-else
-{
-document.getElementById("con").style.display="none";
-clearInterval(con);
 }
 }
 
