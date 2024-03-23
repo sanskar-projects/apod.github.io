@@ -29,7 +29,7 @@ API key: <input type="text" id="key_in" value="DEMO_KEY"><br>
 <input type="radio" id="r3" name="0" onclick="about();">spirit<br>
 <button onclick="fetchData();">search</button>
 </fieldset>
-<div style="float:right;" id="load" hidden>
+<div style="float:right;" id="load">
 <p style="color:yellow;">CONNECTING</p>
 <marquee direction="right" style="height:10px; width:250px; border-color:white; border-style:solid;">
 <div style="height:100%; width:10%; background-color:yellow;"></div>
@@ -60,7 +60,7 @@ var data;
 
 const fetchData=async()=>
 {
-document.getElementById("load").removeAttribute("hidden");
+document.getElementById("load").style.display="none";
 rover="curiosity";
 if(document.getElementById("r2").checked==true)
 {rover="opportunity";}
@@ -75,7 +75,7 @@ const _data=await response.json();
 if(_data.photos.length==0)
 {
 alert("DATA NOT FOUND, the date selected seems to be out of selected rover's active time on Mars, try selecting another date or rover.");
-document.getElementById("load").setAttribute("hidden");
+document.getElementById("load").style.display="block";
 return;
 }
 data={};
@@ -103,7 +103,7 @@ s+="<br>max sol: "+data.photos[i].rover.max_sol;
 s+="<br>max date: "+data.photos[i].rover.max_date;
 s+="<br>total photos: "+data.photos[i].rover.total_photos;
 document.getElementById("desc").innerHTML=s;
-document.getElementById("load").setAttribute("hidden");
+document.getElementById("load").style.display="none";
 }
 
 function slide(x)
