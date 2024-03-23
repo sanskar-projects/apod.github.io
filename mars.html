@@ -57,10 +57,11 @@ const _url="https://api.nasa.gov/mars-photos/api/v1/rovers/"
 var i=0;
 var rover;
 var data;
+var con;
 
 const fetchData=async()=>
 {
-setInterval(connecting,1000);
+con=setInterval(connecting,1000);
 rover="curiosity";
 if(document.getElementById("r2").checked==true)
 {rover="opportunity";}
