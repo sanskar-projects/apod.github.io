@@ -21,12 +21,13 @@ p{color:white;}
 <fieldset style="background-color:white; float:left;">
 <button onclick="slide(-1)"><<</button>
 <button style="background-color:white;" id="SN">1 of 4</button>
-<button onclick="slide(1)">>></button><br>
-<input type="date" id="DATE" value="2015-06-03"><br>
-API key: <input type="text" id="key_in" value="DEMO_KEY"><br>
+<button onclick="slide(1)">>></button><br><br>
+Date: <input type="date" id="DATE" value="2015-06-03"><br><br>
+NASA API key(optional): <input type="text" id="key_in" value="DEMO_KEY"><br><br>
+Rover:<br>
 <input type="radio" id="r1" name="0"  onclick="about();" checked>curiosity<br>
 <input type="radio" id="r2" name="0" onclick="about();">opportunity<br>
-<input type="radio" id="r3" name="0" onclick="about();">spirit<br>
+<input type="radio" id="r3" name="0" onclick="about();">spirit<br><br>
 <button onclick="fetchData();">search</button>
 </fieldset>
 </div>
