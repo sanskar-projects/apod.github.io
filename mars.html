@@ -75,6 +75,7 @@ const _data=await response.json();
 if(_data.photos.length==0)
 {
 alert("DATA NOT FOUND, the date selected seems to be out of selected rover's active time on Mars, try selecting another date or rover.");
+document.getElementById("load").setAttribute("hidden");
 return;
 }
 data={};
