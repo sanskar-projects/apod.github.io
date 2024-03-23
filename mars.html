@@ -50,6 +50,7 @@ if(document.getElementById("r2").checked==true)
 {rover="opportunity";}
 if(document.getElementById("r3").checked==true)
 {rover="spirit";}
+i=0;
 const url=_url+rover+"/photos?api_key=";
 const api_key=document.getElementById("key_in").value;
 var date="&earth_date="+document.getElementById("DATE").value;
@@ -85,7 +86,7 @@ document.getElementById("desc").innerHTML=s;
 function slide(x)
 {
 i+=x;
-fetchData();
+display();
 }
 
 function about()
