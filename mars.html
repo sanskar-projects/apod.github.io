@@ -59,6 +59,8 @@ var data;
 
 const fetchData=async()=>
 {
+try
+{
 document.getElementById("IMG").src="curiosity.jpg";
 rover="curiosity";
 if(document.getElementById("r2").checked==true)
@@ -86,9 +88,9 @@ return;
 }
 data={};
 data=Object.assign({},data,_data);
-
-
-
+}
+catch
+{alert("CONNECTION FAILED");}
 display();
 }
 
