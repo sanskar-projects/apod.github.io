@@ -76,17 +76,8 @@ i=0;
 const url=_url+rover+"/photos?api_key=";
 const api_key=document.getElementById("key_in").value;
 var date="&earth_date="+document.getElementById("DATE").value;
-try
-{
 const response=await fetch(`${url}${api_key}${date}`);
 const _data=await response.json();
-}
-catch
-{
-alert("CONNECTION FAILED");
-display();
-return;
-}
 if(_data.photos.length==0)
 {
 alert("NO DATA FOUND");
