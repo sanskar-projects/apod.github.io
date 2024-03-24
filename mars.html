@@ -2,10 +2,9 @@
 <head>
 <style>
 img{height:500px; width:1000px;}
-p{color:white;}
 </style>
 </head>
-<body style="background-image:linear-gradient(to top left,black,red,black);">
+<body style="background-color:;">
 <div>
 <fieldset>
 <a id="link"><img id="IMG"></a>
@@ -18,16 +17,16 @@ p{color:white;}
 <br>
 
 <div>
-<fieldset style="background-color:white; float:left;">
+<fieldset style="float:left;">
 <button onclick="slide(-1)"><<</button>
 <button style="background-color:white;" id="SN">1 of 4</button>
 <button onclick="slide(1)">>></button><br><br>
 Date: <input type="date" id="DATE" value="2024-02-19"><br><br>
 NASA API key(optional): <input type="text" id="key_in" value="DEMO_KEY"><br><br>
 Rover:<br><br>
-<input type="radio" id="r1" name="0"  onclick="about();" checked>Curiosity(2012-2024)<br><br>
-<input type="radio" id="r2" name="0" onclick="about();">Opportunity(2004-2018)<br><br>
-<input type="radio" id="r3" name="0" onclick="about();">Spirit(2004-2010)<br><br>
+<input type="radio" id="r1" name="0"  onclick="about();" checked>Curiosity<br><br>
+<input type="radio" id="r2" name="0" onclick="about();">Opportunity<br><br>
+<input type="radio" id="r3" name="0" onclick="about();">Spirit<br><br>
 <button onclick="fetchData();">search</button>
 </fieldset>
 
