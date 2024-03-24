@@ -89,8 +89,8 @@ return;
 data={};
 data=Object.assign({},data,_data);
 }
-catch
-{alert("CONNECTION FAILED");}
+catch(e)
+{alert("CONNECTION FAILED ("+e.message+")");}
 display();
 }
 
