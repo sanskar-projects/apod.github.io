@@ -76,11 +76,19 @@ i=0;
 const url=_url+rover+"/photos?api_key=";
 const api_key=document.getElementById("key_in").value;
 var date="&earth_date="+document.getElementById("DATE").value;
+try
+{
 const response=await fetch(`${url}${api_key}${date}`);
 const _data=await response.json();
+}
+catch
+{
+alert("CONNECTION FAILED");
+return;
+}
 if(_data.photos.length==0)
 {
-alert("DATA NOT FOUND, the date selected seems to be out of selected rover's active time on Mars, try selecting another date or rover.");
+alert("NO DATA FOUND");
 return;
 }
 data={};
