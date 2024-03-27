@@ -34,7 +34,7 @@ Rover:<br><br>
 <button onclick="fetchData();">search</button>
 </fieldset>
 
-<fieldset style="float:right;">
+<fieldset style="float:right;" id="dateflash">
 <p id="roverDATE"></p>
 </fieldset>
 </div>
@@ -124,7 +124,7 @@ display();
 
 function about()
 {
-document.getElementById("roverDATE").style.backgroundColor="white";
+document.getElementById("dateflash").style.backgroundColor="black";
 s="https://en.wikipedia.org/wiki/";
 document.getElementById("rover").src="curiosity.jpg";
 document.getElementById("roverLINK").href=s+"Curiosity_(rover)";
@@ -141,7 +141,7 @@ document.getElementById("rover").src="spirit.jpg";
 document.getElementById("roverLINK").href=s+"Spirit_(rover)";
 document.getElementById("roverDATE").innerHTML="Spirit<br><br>landing date: 2004-01-04<br>max date: 2010-03-21";
 }
-setTimeout(function(){document.getElementById("roverDATE").style.backgroundColor="black";},100);
+setTimeout(function(){document.getElementById("dateflash").style.backgroundColor="white";},100);
 }
 
 fetchData();
