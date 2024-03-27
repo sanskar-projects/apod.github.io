@@ -3,14 +3,14 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <style>
 img{height:500px; width:1000px;}
-input{background-color:white;}
+input,w{background-color:white;}
 </style>
 </head>
-<body style="background-image:linear-gradient();">
+<body style="background-image:linear-gradient(to top left,black,white);">
 <h1>Mars Rover Image Browser</h1>
 <p>Browse image data gathered by NASA's Curiosity, Opportunity and Spirit rovers on Mars.</p>
 <div>
-<fieldset>
+<fieldset class="w">
 <a id="link"><img id="IMG"></a>
 <div style="float:right;">
 <p id="desc"></p><br>
@@ -21,7 +21,7 @@ input{background-color:white;}
 <br>
 
 <div>
-<fieldset style="float:left;">
+<fieldset style="float:left;" class="w">
 <button onclick="slide(-1)"><<</button>
 <button id="SN"></button>
 <button onclick="slide(1)">>></button><br><br>
