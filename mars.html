@@ -4,14 +4,14 @@
 <style>
 body{background-image:linear-gradient(to top left,black,white);}
 img{height:500px; width:1000px;}
-input,.w{background-color:white;}
+input,{background-color:white;}
 </style>
 </head>
 <body>
 <h1>Mars Rover Image Browser</h1>
 <p>Browse image data gathered by NASA's Curiosity, Opportunity and Spirit rovers on Mars.</p>
 <div>
-<fieldset class="w">
+<fieldset>
 <a id="link"><img id="IMG"></a>
 <div style="float:right;">
 <p id="desc" class="w"></p><br>
@@ -22,7 +22,7 @@ input,.w{background-color:white;}
 <br>
 
 <div>
-<fieldset style="float:left;" class="w">
+<fieldset style="float:left;">
 <button onclick="slide(-1)"><<</button>
 <button id="SN"></button>
 <button onclick="slide(1)">>></button><br><br>
