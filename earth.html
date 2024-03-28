@@ -41,19 +41,8 @@ document.getElementById("image").src=data.url;
 document.getElementById("imageDATE").innerHTML="date: "+data.date;
 }
 
-function GPS()
-{
-navigator.geolocation.getCurrentPosition(location);
-}
 
-function location(position)
-{
-var long=position.coords.longitude;
-var lati=position.coords.latitude;
-alert(long+"hi"+lati);
-}
 fetchData();
-GPS();
 </script>
 </body>
 </html>
