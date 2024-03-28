@@ -118,21 +118,11 @@ document.getElementById("desc").innerHTML=s;
 
 function slide(x)
 {
-if((i+x)<0||(i+x)>data.photos.length){return;}
-document.getElementById("IMG").src="curiosity.jpg";
-document.getElementById("desc").style.backgroundColor="black";
-if(document.getElementById("r2").checked==true)
+if(i>0&&i<data.photos.length)
 {
-document.getElementById("IMG").src="opportunity.jpg";
-rover="opportunity";
-}
-if(document.getElementById("r3").checked==true)
-{
-document.getElementById("IMG").src="spirit.jpg";
-}
 i+=x;
 display();
-setTimeout(function(){document.getElementById("desc").style.backgroundColor="white";},100)
+}
 }
 
 function about()
