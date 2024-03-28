@@ -6,7 +6,7 @@ img{height:500px; width:500px;}
 </head>
 <body>
 <a id="imageLINK"><img id="image"></a><br>
-<p id="date"></p><br>
+<p id="imageDATE"></p><br>
 Date: <input type="date" id="date" value="2014-02-04"><br>
 Longitude: <input type="text" id="lon" value="-95.33"><br>
 Latitude: <input type="text" id="lat" value="29.78"><br>
@@ -35,7 +35,7 @@ function display(data)
 {
 document.getElementById("imageLINK").src=data.url;
 document.getElementById("image").src=data.url;
-document.getElementById("date").innerHTML="date: "+data.date;
+document.getElementById("imageDATE").innerHTML="date: "+data.date;
 
 }
 fetchData();
