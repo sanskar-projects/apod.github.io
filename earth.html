@@ -7,9 +7,9 @@ img{height:500px; width:500px;}
 <body>
 <a id="imageLINK"><img id="image"></a><br>
 <p id="imageDATE"></p><br>
-Date: <input type="date" id="date" value="2014-02-04"><br>
-Longitude: <input type="text" id="lon" value="-95.33"><br>
-Latitude: <input type="text" id="lat" value="29.78"><br>
+Date: <input type="date" id="date" value="2014-02-01"><br>
+Longitude: <input type="text" id="lon" value="100.75"><br>
+Latitude: <input type="text" id="lat" value="1.5"><br>
 NASA API key(optional): <input type="text" id="api_key" value="DEMO_KEY"><br>
 <button onclick="fetchData();">search</button>
 <script>
@@ -22,11 +22,11 @@ var lat;
 
 const fetchData=async()=>
 {
-const api_key=+document.getElementById("api_key").value;
+const api_key=document.getElementById("api_key").value;
 date=document.getElementById("date").value;
 lon=document.getElementById("lon").value;
 lat=document.getElementById("lat").value;
-const url="https://api.nasa.gov/planetary/earth/assets?lon=100.75&lat=1.5&date=2014-02-01&dim=0.15&api_key=DEMO_KEY";
+const url="https://api.nasa.gov/planetary/earth/assets?lon="+lon+"&lat="+lat+"&date="+date+"&dim=0.15&api_key=DEMO_KEY";
 const response=await fetch(`${url}`);
 const data= await response.json();
 display(data);
