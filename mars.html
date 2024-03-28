@@ -118,7 +118,7 @@ document.getElementById("SN").innerHTML="image "+(i+1)+" of "+data.photos.length
 
 function slide(x)
 {
-if(i>0&&i<data.photos.length)
+if(i+x>=0&&i+x<data.photos.length)
 {
 document.getElementById("IMG").src="";
 i+=x;
