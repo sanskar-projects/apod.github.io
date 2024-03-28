@@ -3,7 +3,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <style>
 img{height:500px; width:1000px;}
-input,{background-color:white;}
+input{background-color:white;}
 </style>
 </head>
 <body>
@@ -13,7 +13,7 @@ input,{background-color:white;}
 <fieldset>
 <a id="link"><img id="IMG"></a>
 <div style="float:right;">
-<p id="desc" class="w"></p><br>
+<p id="desc"></p><br>
 <a id="roverLINK"><img id="rover" style="height:250px; width:250px;"></a>
 </div>
 </fieldset>
@@ -101,7 +101,6 @@ function display()
 {
 document.getElementById("IMG").src=data.photos[i].img_src;
 document.getElementById("link").href=data.photos[i].img_src;
-document.getElementById("SN").innerHTML="image "+(i+1)+" of "+data.photos.length;
 var s="";
 s+="<br>sol: "+data.photos[i].sol;
 s+="<br>camera: "+data.photos[i].camera.full_name;
@@ -114,12 +113,14 @@ s+="<br>max sol: "+data.photos[i].rover.max_sol;
 s+="<br>max date: "+data.photos[i].rover.max_date;
 s+="<br>total photos: "+data.photos[i].rover.total_photos;
 document.getElementById("desc").innerHTML=s;
+document.getElementById("SN").innerHTML="image "+(i+1)+" of "+data.photos.length;
 }
 
 function slide(x)
 {
 if(i>0&&i<data.photos.length)
 {
+document.getElementById("IMG").src="";
 i+=x;
 display();
 }
