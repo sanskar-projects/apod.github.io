@@ -22,12 +22,11 @@ var lat;
 
 const fetchData=async()=>
 {
-const _url="https://api.nasa.gov/planetary/earth/assets?";
 const api_key="&api_key="+document.getElementById("api_key").value;
 date=document.getElementById("date").value;
 lon="&lon="+document.getElementById("lon").value;
 lat="&lat="+document.getElementById("lat").value;
-const url=_url+lon+lat+date;
+const url="https://api.nasa.gov/planetary/earth/assets?lon="+lon+"&lat="+lat+"&date="+date+"&dim=0.15&api_key=DEMO_KEY";
 const response=await fetch(`${url}${api_key}`);
 const data= await response.json();
 display(data);
