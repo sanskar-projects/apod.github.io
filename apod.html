@@ -15,8 +15,8 @@ NASA API key(optional): <input type="text" id="api_key" value="DEMO_KEY"><br>
 
 <script>
 const d=new Date();
-var s=d.getFullYear()+(d.getMonth()+1)+d.getDate();
-alert(s);
+var s=d.getFullYear()+""+(d.getMonth()+1)+""+d.getDate();
+document.getElementById(date).value=s;
 
 const fetchData=async()=>
 {
