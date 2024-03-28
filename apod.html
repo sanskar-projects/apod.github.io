@@ -8,14 +8,17 @@ img{height:250px; width:500px;}
 <p id="title"></p><br>
 <img id="image"><br>
 <p id="explanation"></p><br>
-<p id="date"></p>
+<p id="date"></p><br>
+Date: <input type="date" id="date_in"><br>
+NASA API key(optional): <input type="text" id="api_key">
 
 <script>
 const url="https://api.nasa.gov/planetary/apod?api_key=";
-const api_key="cixz4I9UTkxdUVkiqdfzY3gitaatNfN7qcTu5WGy";
+const api_key=document.getElementById("api_key").value;
+const date="&date="+document.getElementById("date_in").value;
 const fetchData=async()=>
 {
-const response=await fetch(`${url}${api_key}`);
+const response=await fetch(`${url}${api_key}${date}`);
 const data= await response.json();
 display(data);
 }
