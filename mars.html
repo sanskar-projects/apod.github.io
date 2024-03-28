@@ -119,6 +119,7 @@ document.getElementById("desc").innerHTML=s;
 function slide(x)
 {
 document.getElementById("IMG").src="curiosity.jpg";
+document.getElementById("desc").style.backgroundColor="black";
 if(document.getElementById("r2").checked==true)
 {
 document.getElementById("IMG").src="opportunity.jpg";
@@ -130,6 +131,7 @@ document.getElementById("IMG").src="spirit.jpg";
 }
 i+=x;
 display();
+setTimeout(function(){document.getElementById("desc").style.backgroundColor="white";},100)
 }
 
 function about()
