@@ -13,11 +13,13 @@ Date: <input type="date" id="date_in"><br>
 NASA API key(optional): <input type="text" id="api_key">
 
 <script>
+const d=new Date();
+document.getElementById(date).value=d.getFullYear()+(d.getMonth()+1)+d.getDate();
+const fetchData=async()=>
+{
 const url="https://api.nasa.gov/planetary/apod?api_key=";
 const api_key=document.getElementById("api_key").value;
 const date="&date="+document.getElementById("date_in").value;
-const fetchData=async()=>
-{
 const response=await fetch(`${url}${api_key}${date}`);
 const data= await response.json();
 display(data);
