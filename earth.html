@@ -24,8 +24,8 @@ const fetchData=async()=>
 {
 const api_key=+document.getElementById("api_key").value;
 date=document.getElementById("date").value;
-lon="&lon="+document.getElementById("lon").value;
-lat="&lat="+document.getElementById("lat").value;
+lon=document.getElementById("lon").value;
+lat=document.getElementById("lat").value;
 const url="https://api.nasa.gov/planetary/earth/assets?lon="+lon+"&lat="+lat+"&date="+date+"&dim=0.15&api_key=";
 const response=await fetch(`${url}${api_key}`);
 const data= await response.json();
