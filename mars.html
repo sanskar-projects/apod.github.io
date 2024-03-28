@@ -118,6 +118,16 @@ document.getElementById("desc").innerHTML=s;
 
 function slide(x)
 {
+document.getElementById("IMG").src="curiosity.jpg";
+if(document.getElementById("r2").checked==true)
+{
+document.getElementById("IMG").src="opportunity.jpg";
+rover="opportunity";
+}
+if(document.getElementById("r3").checked==true)
+{
+document.getElementById("IMG").src="spirit.jpg";
+}
 i+=x;
 display();
 }
