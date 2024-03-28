@@ -7,9 +7,9 @@ img{height:500px; width:500px;}
 <body>
 <a id="imageLINK"><img id="image"></a><br>
 <p id="imageDATE"></p><br>
-Date: <input type="date" id="date" value="2014-02-01"><br>
 Longitude: <input type="text" id="lon" value="100.75"><br>
 Latitude: <input type="text" id="lat" value="1.5"><br>
+Date: <input type="date" id="date" value="2014-02-01"><br>
 Dimension: <input type="text" id="dim" value="0.15"><br>
 NASA API key(optional): <input type="text" id="api_key" value="DEMO_KEY"><br>
 <button onclick="fetchData();">search</button>
@@ -25,9 +25,9 @@ var dim;
 const fetchData=async()=>
 {
 const api_key=document.getElementById("api_key").value;
-date=document.getElementById("date").value;
 lon=document.getElementById("lon").value;
 lat=document.getElementById("lat").value;
+date=document.getElementById("date").value;
 dim=document.getElementById("dim").value;
 const url="https://api.nasa.gov/planetary/earth/assets?lon="+lon+"&lat="+lat+"&date="+date+"&dim="+dim+"&api_key=";
 const response=await fetch(`${url}${api_key}`);
@@ -39,8 +39,23 @@ function display(data)
 document.getElementById("imageLINK").href=data.url;
 document.getElementById("image").src=data.url;
 document.getElementById("imageDATE").innerHTML="date: "+data.date;
-
 }
+
+function locate()
+{
+if(navigator.geolocation)
+{
+navigator.geolocation.getCurrentPosition(show);
+}
+}
+
+function show(position)
+{
+var long=position.coords.longitude;
+var lati=position.coords.latitude;
+alert(long,"hi",lati);
+}
+locate();
 fetchData();
 </script>
 </body>
