@@ -10,12 +10,14 @@ img{height:500px; width:500px;}
 Date: <input type="date" id="date" value="2014-02-01"><br>
 Longitude: <input type="text" id="lon" value="100.75"><br>
 Latitude: <input type="text" id="lat" value="1.5"><br>
+Dimension: <input type="text" id="dim" value="0.15"><br>
 NASA API key(optional): <input type="text" id="api_key" value="DEMO_KEY"><br>
 <button onclick="fetchData();">search</button>
 <script>
 var date;
 var lon;
 var lat;
+var dim;
 
 
 
@@ -26,11 +28,11 @@ const api_key=document.getElementById("api_key").value;
 date=document.getElementById("date").value;
 lon=document.getElementById("lon").value;
 lat=document.getElementById("lat").value;
-const url="https://api.nasa.gov/planetary/earth/assets?lon="+lon+"&lat="+lat+"&date="+date+"&dim=0.15&api_key=DEMO_KEY";
-const response=await fetch(`${url}`);
+dim=document.getElementById("dim").value;
+const url="https://api.nasa.gov/planetary/earth/assets?lon="+lon+"&lat="+lat+"&date="+date+"&dim="+dim+"&api_key=";
+const response=await fetch(`${url}${api_key}`);
 const data= await response.json();
 display(data);
-alert(date+"lon"+lon+"lat"+lat+"apikey"+api_key);
 }
 function display(data)
 {
