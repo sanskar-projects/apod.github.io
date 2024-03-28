@@ -41,19 +41,19 @@ document.getElementById("image").src=data.url;
 document.getElementById("imageDATE").innerHTML="date: "+data.date;
 }
 
-function locate()
+function GPS()
 {
 if(navigator.geolocation)
 {
-navigator.geolocation.getCurrentPosition(show);
+navigator.geolocation.getCurrentPosition(location);
 }
 }
 
-function show(position)
+function location(position)
 {
 var long=position.coords.longitude;
 var lati=position.coords.latitude;
-alert(long,"hi",lati);
+alert(long+"hi"+lati);
 }
 locate();
 fetchData();
