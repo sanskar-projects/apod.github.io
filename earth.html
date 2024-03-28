@@ -30,6 +30,7 @@ const url="https://api.nasa.gov/planetary/earth/assets?lon=100.75&lat=1.5&date=2
 const response=await fetch(`${url}${api_key}`);
 const data= await response.json();
 display(data);
+alert(date+"lon"+lon+"lat"+lat+"apikey"+api_key);
 }
 function display(data)
 {
