@@ -9,13 +9,15 @@ img{height:250px; width:500px;}
 <img id="image"><br>
 <p id="explanation"></p><br>
 <p id="date"></p><br>
-Date: <input type="date" id="date_in"><br>
-NASA API key(optional): <input type="text" id="api_key"><br>
+Date: <input type="date" id="date_in" value="2024-01-01"><br>
+NASA API key(optional): <input type="text" id="api_key" value="DEMO_KEY"><br>
 <button onclick="fetchData();">search</button>
 
 <script>
 const d=new Date();
-document.getElementById(date).value=d.getFullYear()+(d.getMonth()+1)+d.getDate();
+var s=d.getFullYear()+(d.getMonth()+1)+d.getDate();
+alert(s);
+
 const fetchData=async()=>
 {
 const url="https://api.nasa.gov/planetary/apod?api_key=";
