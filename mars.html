@@ -118,6 +118,7 @@ document.getElementById("desc").innerHTML=s;
 
 function slide(x)
 {
+if((i+x)<0||(i+x)>data.photos.length){return;}
 document.getElementById("IMG").src="curiosity.jpg";
 document.getElementById("desc").style.backgroundColor="black";
 if(document.getElementById("r2").checked==true)
