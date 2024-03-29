@@ -2,7 +2,7 @@
 <head>
 <style>
 img{height:500px; width:1000px;}
-input,fieldset{background-color:white;}
+.in{background-image:linear-gradient(to top left,lightblue,lightyellow);}
 body{background-color:black;}
 p,h1{color:white;}
 </style>
@@ -18,7 +18,7 @@ p,h1{color:white;}
 <p id="date"></p><br>
 <br>
 <div>
-<fieldset style="float:left;">
+<fieldset style="float:left;" class="in">
 Date: <input type="date" id="date_in"><br><br>
 NASA API key(optional): <input type="text" id="api_key" value="DEMO_KEY"><br><br>
 <button onclick="fetchData();">search</button>
