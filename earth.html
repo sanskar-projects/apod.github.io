@@ -13,6 +13,8 @@ Date: <input type="date" id="date" value="2014-02-01"><br>
 Dimension: <input type="text" id="dim" value="0.15"><br>
 NASA API key(optional): <input type="text" id="api_key" value="DEMO_KEY"><br>
 <button onclick="fetchData();">search</button>
+<h1 id="GPS"></h1>
+
 <script>
 var date;
 var lon;
@@ -41,22 +43,27 @@ document.getElementById("image").src=data.url;
 document.getElementById("imageDATE").innerHTML="date: "+data.date;
 }
 
-function getLocation() {
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(showPosition);
-  } else {
-    x.innerHTML = "Geolocation is not supported by this browser.";
-  }
+function getLocation()
+{
+if(navigator.geolocation)
+{
+navigator.geolocation.getCurrentPosition(showPosition);
+}
+else{alert("GEOLOCATION API ERROR");}
 }
 
 function showPosition(position) {
   alert("Latitude: " + position.coords.latitude +
   "Longitude: " + position.coords.longitude);
 }
-
+function showPosition(position)
+{
+s+="Latitude: "+position.coords.latitude;
+s+="<br>Longitude: "+position.coords.longitude;
+document.getElementById("GPS").innerHTML=s;
+}
 
 fetchData();
-
 getLocation();
 </script>
 </body>
