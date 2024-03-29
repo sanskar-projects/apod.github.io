@@ -1,18 +1,24 @@
 <html>
 <head>
 <style>
-img{height:50%; width:100%;}
+img{height:500px; width:1000px;}
 </style>
 </head>
 <body>
+
 <p id="title"></p><br>
+<div>
 <a id="imageLINK"><img id="image"></a><br>
+</div>
 <p id="explanation"></p><br>
 <p id="date"></p><br>
-Date: <input type="date" id="date_in">
-<button onclick="today();">today</button><br>
-NASA API key(optional): <input type="text" id="api_key" value="DEMO_KEY"><br>
+<br>
+<fieldset style="float:left;">
+Date: <input type="date" id="date_in"><br><br>
+<button onclick="today();">today</button><br><br>
+NASA API key(optional): <input type="text" id="api_key" value="DEMO_KEY"><br><br>
 <button onclick="fetchData();">search</button>
+</fieldset>
 
 <script>
 
