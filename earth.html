@@ -41,11 +41,23 @@ document.getElementById("image").src=data.url;
 document.getElementById("imageDATE").innerHTML="date: "+data.date;
 }
 
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else {
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+function showPosition(position) {
+  alert("Latitude: " + position.coords.latitude +
+  "Longitude: " + position.coords.longitude);
+}
 
 
 fetchData();
 
-
+getLocation();
 </script>
 </body>
 </html>
