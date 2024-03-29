@@ -13,12 +13,14 @@ img{height:500px; width:1000px;}
 <p id="explanation"></p><br>
 <p id="date"></p><br>
 <br>
+<div>
 <fieldset style="float:left;">
-Date: <input type="date" id="date_in">
-<button onclick="today();">today</button><br><br>
+Date: <input type="date" id="date_in"><br><br>
 NASA API key(optional): <input type="text" id="api_key" value="DEMO_KEY"><br><br>
 <button onclick="fetchData();">search</button>
 </fieldset>
+<button onclick="today();" style="float:right; height:100px; width:100px;">today</button>
+</div>
 
 <script>
 
