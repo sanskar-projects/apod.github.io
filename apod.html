@@ -27,18 +27,22 @@ NASA API key(optional): <input type="text" id="api_key" value="DEMO_KEY"><br><br
 
 const fetchData=async()=>
 {
+try
+{
 document.getElementById("image").src="";
 var s="CONNECTING";
 document.getElementById("title").innerHTML=s;
 document.getElementById("explanation").innerHTML=s;
 document.getElementById("date").innerHTML=s;
-
 const url="https://api.nasa.gov/planetary/apod?api_key=";
 const api_key=document.getElementById("api_key").value;
 const date="&date="+document.getElementById("date_in").value;
 const response=await fetch(`${url}${api_key}${date}`);
 const data= await response.json();
+if(data.msg){alert(data.msg);}
 display(data);
+}
+catch(e){alert("CONNECTION FAILED");}
 }
 function display(data)
 {
