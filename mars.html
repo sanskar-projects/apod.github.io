@@ -121,6 +121,8 @@ function slide(x)
 if(i+x>=0&&i+x<data.photos.length)
 {
 document.getElementById("IMG").src="";
+document.getElementById("desc").style.color="white";
+setTimeout(function(){document.getElementById("desc").style.color="black";},100);
 i+=x;
 display();
 }
