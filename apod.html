@@ -39,7 +39,12 @@ const api_key=document.getElementById("api_key").value;
 const date="&date="+document.getElementById("date_in").value;
 const response=await fetch(`${url}${api_key}${date}`);
 const data= await response.json();
-if(data.msg){alert(data.msg);}
+if(data.msg)
+{
+alert(data.msg);
+return;
+}
+
 display(data);
 alert(data);
 }
