@@ -41,6 +41,7 @@ const response=await fetch(`${url}${api_key}${date}`);
 const data= await response.json();
 if(data.msg){alert(data.msg);}
 display(data);
+alert(data);
 }
 catch(e){alert("CONNECTION FAILED");}
 }
