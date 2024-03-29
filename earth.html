@@ -1,7 +1,7 @@
 <html>
 <head>
 <style>
-img{height:500px; width:1000px;}
+img{height:500px; width:1000px; background-image:linear-gradient(to top left,violet,red);}
 </style>
 </head>
 <body>
@@ -46,6 +46,8 @@ const fetchData=async()=>
 {
 try
 {
+document.getElementById("image").src="";
+
 const api_key=document.getElementById("api_key").value;
 lon=document.getElementById("lon").value;
 lat=document.getElementById("lat").value;
