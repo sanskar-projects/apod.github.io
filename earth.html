@@ -16,14 +16,14 @@ img{height:500px; width:1000px;}
 <fieldset style="float:left;">
 Longitude: <input type="text" id="lon" value="100.75">
 <button onclick="run(1,0,0)">+</button>
-<button onclick="run(-1,0,0)">+</button><br><br>
+<button onclick="run(-1,0,0)">-</button><br><br>
 Latitude: <input type="text" id="lat" value="1.5">
 <button onclick="run(0,1,0)">+</button>
-<button onclick="run(0,-1,0)">+</button><br><br>
+<button onclick="run(0,-1,0)">-</button><br><br>
 Date: <input type="date" id="date" value="2014-02-01"><br><br>
 Dimension: <input type="text" id="dim" value="0.15">
 <button onclick="run(0,0,1)">+</button>
-<button onclick="run(0,0,-1)">+</button><br><br>
+<button onclick="run(0,0,-1)">-</button><br><br>
 NASA API key(optional): <input type="text" id="api_key" value="DEMO_KEY"><br><br>
 <button onclick="fetchData();">search</button>
 </fieldset>
@@ -94,9 +94,12 @@ document.getElementById("map").innerHTML=s;
 
 function run(a,b,c)
 {
-document.getElementById("lon").value+=a;
-document.getElementById("lat").value+=b;
-document.getElementById("dim").value+=c;
+a+=parseFloat(document.getElementById("lon").value);
+b+=parseFloat(document.getElementById("lat").value);
+c+=parseFloat(document.getElementById("dim").value);
+document.getElementById("lon").value=a;
+document.getElementById("lat").value=b;
+document.getElementById("dim").value=c;
 }
   
 
