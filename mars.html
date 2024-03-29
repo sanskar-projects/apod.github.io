@@ -131,7 +131,7 @@ display();
 
 function about()
 {
-document.getElementById("dateflash").style.backgroundColor="black";
+document.getElementById("dateflash").style.backgroundColor="white";
 s="https://en.wikipedia.org/wiki/";
 document.getElementById("rover").src="curiosity.jpg";
 document.getElementById("roverLINK").href=s+"Curiosity_(rover)";
@@ -148,7 +148,7 @@ document.getElementById("rover").src="spirit.jpg";
 document.getElementById("roverLINK").href=s+"Spirit_(rover)";
 document.getElementById("roverDATE").innerHTML="Spirit<br><br>landing date: 2004-01-04<br>max date: 2010-03-21";
 }
-setTimeout(function(){document.getElementById("dateflash").style.backgroundColor="white";},100);
+setTimeout(function(){document.getElementById("dateflash").style.backgroundColor="black";},100);
 }
 
 fetchData();
