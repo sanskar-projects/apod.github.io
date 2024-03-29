@@ -23,11 +23,11 @@ Date: <input type="date" id="date_in"><br><br>
 NASA API key(optional): <input type="text" id="api_key" value="DEMO_KEY"><br><br>
 <button onclick="fetchData();">search</button>
 </fieldset>
-<button onclick="today();" style="float:right; height:100px; width:100px;">today</button>
+<button id="today" onclick="today();" style="float:right; height:100px; width:100px;">today</button>
 </div>
 
 <script>
-
+var flag=true;
 const fetchData=async()=>
 {
 document.getElementById("image").src="";
@@ -66,8 +66,15 @@ const d=new Date();
 document.getElementById("date_in").value=d.getFullYear()+(d.getMonth()+1)+d.getDate();
 fetchData();
 }
-today();
 
+function color()
+{
+flag=!flag;
+if(flag==true){document.getElementById("today").style.backgroundColor="blue";}
+else{document.getElementById("today").style.backgroundColor="yellow";}
+}
+today();
+setInterval(color,500);
 </script>
 </body>
 </html>
