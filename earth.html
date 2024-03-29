@@ -5,15 +5,27 @@ img{height:500px; width:500px;}
 </style>
 </head>
 <body>
+</div>
 <a id="imageLINK"><img id="image"></a><br>
-<p id="imageDATE"></p><br>
+<p id="out_date" style="float:right;"></p>
+</div>
+<div>
+<fieldset style="float:left;">
 Longitude: <input type="text" id="lon" value="100.75"><br>
 Latitude: <input type="text" id="lat" value="1.5"><br>
 Date: <input type="date" id="date" value="2014-02-01"><br>
 Dimension: <input type="text" id="dim" value="0.15"><br>
 NASA API key(optional): <input type="text" id="api_key" value="DEMO_KEY"><br>
 <button onclick="fetchData();">search</button>
-<h1 id="GPS"></h1>
+</fieldset>
+
+<fieldset style="float:right;">
+<p>Your Current Location</p><br>
+<p id="map"></p><br>
+<button onclick="getLocation();">refresh</button>
+</fieldset>
+</div>
+
 
 <script>
 var date;
@@ -40,7 +52,8 @@ function display(data)
 {
 document.getElementById("imageLINK").href=data.url;
 document.getElementById("image").src=data.url;
-document.getElementById("imageDATE").innerHTML="date: "+data.date;
+document.getElementById("out_date").innerHTML="date: "+data.date.split("T")[0]+"<br>time: "+data.date.split("T")[1];
+
 }
 
 function getLocation()
@@ -58,10 +71,10 @@ function showPosition(position) {
 }
 function showPosition(position)
 {
-var s;
+var s="";
 s+="Latitude: "+position.coords.latitude;
 s+="<br>Longitude: "+position.coords.longitude;
-document.getElementById("GPS").innerHTML=s;
+document.getElementById("map").innerHTML=s;
 }
 
 fetchData();
