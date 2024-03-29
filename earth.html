@@ -5,16 +5,16 @@ img{height:500px; width:500px;}
 </style>
 </head>
 <body>
-<div>
+<fieldset>
 <a id="imageLINK"><img id="image"></a>
 <p id="out_date" style="float:right;"></p>
-</div>
+</fieldset>
 <br>
 <div>
 <fieldset style="float:left;">
 Longitude: <input type="text" id="lon" value="100.75"><br>
 Latitude: <input type="text" id="lat" value="1.5"><br>
-Date: <input type="date" id="date" value="2014-02-01">
+Date: <input type="date" id="date" value="2014-02-01"><br>
 Dimension: <input type="text" id="dim" value="0.15"><br>
 NASA API key(optional): <input type="text" id="api_key" value="DEMO_KEY"><br>
 <button onclick="fetchData();">search</button>
