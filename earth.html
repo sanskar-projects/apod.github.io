@@ -63,7 +63,11 @@ if(navigator.geolocation)
 {
 navigator.geolocation.getCurrentPosition(showPosition);
 }
-else{alert("GEOLOCATION API ERROR");}
+else
+{
+document.getElementById("map").innerHTML="GEOLOCATION API ERROR";
+return;
+}
 }
 
 function showPosition(position) {
