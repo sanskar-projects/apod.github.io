@@ -9,12 +9,12 @@ img{height:250px; width:500px;}
 <img id="image"><br>
 <p id="explanation"></p><br>
 <p id="date"></p><br>
-Date: <input type="date" id="date_in" value="2024-01-01"><br>
+Date: <input type="date" id="date_in"><br>
 NASA API key(optional): <input type="text" id="api_key" value="DEMO_KEY"><br>
 <button onclick="fetchData();">search</button>
 
 <script>
-document.getElementById().value=d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate();
+document.getElementById("date").value=d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate();
 
 const fetchData=async()=>
 {
