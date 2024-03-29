@@ -14,8 +14,7 @@ NASA API key(optional): <input type="text" id="api_key" value="DEMO_KEY"><br>
 <button onclick="fetchData();">search</button>
 
 <script>
-document.getElementById("date_in").value=d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate();
-alert(document.getElementById("date_in").value);
+
 const fetchData=async()=>
 {
 const url="https://api.nasa.gov/planetary/apod?api_key=";
@@ -32,7 +31,7 @@ document.getElementById("title").innerHTML=data.title;
 document.getElementById("explanation").innerHTML=data.explanation;
 document.getElementById("date").innerHTML=data.date;
 }
-fetchData();
+
 </script>
 </body>
 </html>
