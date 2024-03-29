@@ -17,14 +17,12 @@ p,h1{color:white;}
 <p id="explanation"></p><br>
 <p id="date"></p><br>
 <br>
-<div>
 <fieldset style="float:left;" class="in">
-Date: <input type="date" id="date_in"><br><br>
+Date: <input type="date" id="date_in">
+<button onclick="today();">today</button><br><br>
 NASA API key(optional): <input type="text" id="api_key" value="DEMO_KEY"><br><br>
 <button onclick="fetchData();">search</button>
 </fieldset>
-<button id="today" onclick="today();" style="float:right; height:100px; width:100px;">today</button>
-</div>
 
 <script>
 var flag=true;
@@ -67,14 +65,8 @@ document.getElementById("date_in").value=d.getFullYear()+(d.getMonth()+1)+d.getD
 fetchData();
 }
 
-function color()
-{
-flag=!flag;
-if(flag==true){document.getElementById("today").style.backgroundColor="blue";}
-else{document.getElementById("today").style.backgroundColor="yellow";}
-}
+
 today();
-setInterval(color,500);
 </script>
 </body>
 </html>
