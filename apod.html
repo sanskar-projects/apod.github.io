@@ -1,12 +1,12 @@
 <html>
 <head>
 <style>
-img{height:250px; width:500px;}
+img{height:50%; width:100%;}
 </style>
 </head>
 <body>
 <p id="title"></p><br>
-<img id="image"><br>
+<a id="imageLINK"><img id="image"></a><br>
 <p id="explanation"></p><br>
 <p id="date"></p><br>
 Date: <input type="date" id="date_in">
@@ -28,9 +28,10 @@ display(data);
 function display(data)
 {
 document.getElementById("image").src=data.hdurl;
+document.getElementById("imageLINK").href=data.hdurl;
 document.getElementById("title").innerHTML=data.title;
 document.getElementById("explanation").innerHTML=data.explanation;
-document.getElementById("date").innerHTML=data.date;
+document.getElementById("date").innerHTML="["+data.date+"]";
 }
 function today()
 {
