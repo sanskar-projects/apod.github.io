@@ -9,7 +9,8 @@ img{height:250px; width:500px;}
 <img id="image"><br>
 <p id="explanation"></p><br>
 <p id="date"></p><br>
-Date: <input type="date" id="date_in"><br>
+Date: <input type="date" id="date_in">
+<button onclick="today();">today</button><br>
 NASA API key(optional): <input type="text" id="api_key" value="DEMO_KEY"><br>
 <button onclick="fetchData();">search</button>
 
@@ -31,6 +32,13 @@ document.getElementById("title").innerHTML=data.title;
 document.getElementById("explanation").innerHTML=data.explanation;
 document.getElementById("date").innerHTML=data.date;
 }
+function today()
+{
+const d=new Date();
+document.getElementById().value=d.getFullYear()+(d.getMonth()+1)+d.getDate();
+}
+today();
+fetchData();
 
 </script>
 </body>
