@@ -27,8 +27,6 @@ NASA API key(optional): <input type="text" id="api_key" value="DEMO_KEY"><br><br
 
 const fetchData=async()=>
 {
-try
-{
 document.getElementById("image").src="";
 var s="CONNECTING";
 document.getElementById("title").innerHTML=s;
@@ -44,11 +42,13 @@ if(data.msg)
 alert(data.msg);
 return;
 }
-
+if(!data.date)
+{
+alert("CONNECTION FAILED");
+return;
+}
 display(data);
 alert(data);
-}
-catch(e){alert("CONNECTION FAILED");}
 }
 function display(data)
 {
