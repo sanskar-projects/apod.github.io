@@ -59,7 +59,7 @@ date=document.getElementById("date").value;
 dim=document.getElementById("dim").value;
 const url="https://api.nasa.gov/planetary/earth/assets?lon="+lon+"&lat="+lat+"&date="+date+"&dim="+dim+"&api_key=";
 const response=await fetch(`${url}${api_key}`);
-const data= await response.json();
+const data=await response.json();
 if(data.msg)
 {
 alert(data.msg);
