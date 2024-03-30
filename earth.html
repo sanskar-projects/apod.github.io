@@ -5,6 +5,7 @@ img{height:500px; width:1000px;}
 .in{background-image:linear-gradient(to top left,lightblue,lightyellow);}
 body{background-color:black;}
 p,h1{color:white;}
+input{border-color:black;}
 </style>
 </head>
 <body>
@@ -32,7 +33,7 @@ NASA API key(optional): <input type="text" id="api_key" value="DEMO_KEY"><br><br
 </fieldset>
 
 <fieldset style="float:right;" class="in">
-<span>Your Current Location</span>
+<span>Your Current Location</span><br>
 <span id="map"></span>
 <button onclick="getLocation();">refresh</button>
 </fieldset>
