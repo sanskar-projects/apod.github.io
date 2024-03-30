@@ -63,11 +63,15 @@ const data=await response.json();
 if(data.msg)
 {
 alert(data.msg);
-return;
+location.reload();
 }
 display(data);
 }
-catch(e){alert("CONNECTION FAILED");}
+catch(e)
+{
+alert("CONNECTION FAILED");
+location.reload();
+}
 }
 function display(data)
 {
