@@ -106,16 +106,16 @@ function display()
 document.getElementById("IMG").src=data.photos[i].img_src;
 document.getElementById("link").href=data.photos[i].img_src;
 var s="";
-s+="<br>sol: "+data.photos[i].sol;
-s+="<br>camera: "+data.photos[i].camera.full_name;
-s+="<br>earth date: "+data.photos[i].earth_date;
-s+="<br>rover: "+data.photos[i].rover.name;
-s+="<br>landing date: "+data.photos[i].rover.landing_date;
-s+="<br>launch date: "+data.photos[i].rover.launch_date;
-s+="<br>status: "+data.photos[i].rover.status;
-s+="<br>max sol: "+data.photos[i].rover.max_sol;
-s+="<br>max date: "+data.photos[i].rover.max_date;
-s+="<br>total photos: "+data.photos[i].rover.total_photos;
+s+="sol: "+data.photos[i].sol;
+s+="<br><br>camera: "+data.photos[i].camera.full_name;
+s+="<br><br>earth date: "+data.photos[i].earth_date;
+s+="<br><br>rover: "+data.photos[i].rover.name;
+s+="<br><br>landing date: "+data.photos[i].rover.landing_date;
+s+="<br><br>launch date: "+data.photos[i].rover.launch_date;
+s+="<br><br>status: "+data.photos[i].rover.status;
+s+="<br><br>max sol: "+data.photos[i].rover.max_sol;
+s+="<br><br>max date: "+data.photos[i].rover.max_date;
+s+="<br><br>total photos: "+data.photos[i].rover.total_photos;
 document.getElementById("desc").innerHTML=s;
 document.getElementById("SN").innerHTML="image "+(i+1)+" of "+data.photos.length;
 }
