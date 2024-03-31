@@ -1,7 +1,7 @@
 <html>
 <head>
 <style>
-img{height:500px; width:1000px;}
+img{height:500px; width:1000px; padding-left:10px;}
 .in{background-image:linear-gradient(to top left,lightblue,lightyellow);}
 body{background-color:black;}
 p,h1{color:white;}
@@ -13,7 +13,7 @@ input{border-color:black;}
 <p>earth</p>
 <fieldset>
 <a id="imageLINK"><img id="image"></a>
-<p id="out_date" style="float:right;"></p>
+<p id="out_date" style="float:left;"></p>
 </fieldset>
 <br>
 <div>
@@ -78,7 +78,7 @@ function display(data)
 {
 document.getElementById("imageLINK").href=data.url;
 document.getElementById("image").src=data.url;
-document.getElementById("out_date").innerHTML="date: "+data.date.split("T")[0]+"<br>time: "+data.date.split("T")[1];
+document.getElementById("out_date").innerHTML="date: "+data.date.split("T")[0]+"<br><br>time: "+data.date.split("T")[1];
 
 }
 
