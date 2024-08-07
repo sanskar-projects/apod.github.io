@@ -1,50 +1,38 @@
 <html>
-  <body>
-    <!-- ... Your HTML and CSS -->
-
-    <script type="importmap">
-      {
-        "imports": {
-          "@google/generative-ai": "https://esm.run/@google/generative-ai"
-        }
-      }
-    </script>
-    <script type="module">
+<head>
+<script type="importmap">
+  {
+    "imports": {
+      "@google/generative-ai": "https://esm.run/@google/generative-ai"
+    }
+  }
+</script>
+</head>
+<body>
+  <!-- ... Your HTML and CSS -->
+  <!-- Import @google/generative-ai, as shown above. -->
+  <script type="module">
       import { GoogleGenerativeAI } from "@google/generative-ai";
 
       // Fetch your API_KEY
-      const API_KEY = "AIzaSyBVBRL8lxnYDHA0VcPEPCY6mipSugAHTls";
+      const API_KEY = "AIzaSyBKu6gVWpR4Z-r73nH6yn-CVcuYPYz_7_c";
 
       // Access your API key (see "Set up your API key" above)
       const genAI = new GoogleGenerativeAI(API_KEY);
 
-      // ...
+      const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash"});
 
-      const model = genAI.getGenerativeModel({ model: "gemini-pro"});
-
-      // ...
-    </script>
-    <script>
-import { GoogleGenerativeAI } from "@google/generative-ai";
-
-// Access your API key (see "Set up your API key" above)
-const genAI = new GoogleGenerativeAI(API_KEY);
-
-async function run() {
-  // For text-only input, use the gemini-pro model
-  const model = genAI.getGenerativeModel({ model: "gemini-pro"});
-
-  const prompt = "Write a story about a magic backpack."
+      async function run() {
+  const prompt = "Write a story about an AI and magic"
 
   const result = await model.generateContent(prompt);
   const response = await result.response;
   const text = response.text();
-  document.getElementById("hi").innerHTML=text;
+  alert(text);
+alert("hi");
 }
 
 run();
-
-    </script>
-    <h1 id="hi"></h1>
-  </body>
+  </script>
+</body>
 </html>
