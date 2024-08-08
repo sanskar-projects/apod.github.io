@@ -9,7 +9,7 @@
 </script>
 </head>
 <body>
-  <input type="text" id="input" value="what did i ask you to remember?"></input>
+  <input type="text" id="input" value="remember this word, banana"></input>
   <button onclick="run();">search</button>
   <!-- ... Your HTML and CSS -->
   <!-- Import @google/generative-ai, as shown above. -->
@@ -33,6 +33,9 @@
 alert("hi");
 }
 run();
+document.getElementById("input").value="what did i ask you to remember?";
+run();
+
 
   </script>
   
