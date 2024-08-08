@@ -23,7 +23,7 @@
       const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash"});
 
       async function run() {
-  const prompt = document.getElementById("input").value;
+  const prompt = "capital of india?";
 
   const result = await model.generateContent(prompt);
   const response = await result.response;
