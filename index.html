@@ -9,7 +9,8 @@
 </script>
 </head>
 <body>
-  <input type="text" id="input"><button onclick="run();">search</button>
+  <input type="text" id="input" value="capital of india?"></input>
+  <button onclick="run();">search</button>
   <!-- ... Your HTML and CSS -->
   <!-- Import @google/generative-ai, as shown above. -->
   <script type="module">
@@ -24,16 +25,15 @@
       const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash"});
 
       async function run() {
-  const prompt = "capital of india?";
-
+  const prompt =document.getElementById("input").value;
   const result = await model.generateContent(prompt);
   const response = await result.response;
   const text = response.text();
   alert(text);
 alert("hi");
 }
-
 run();
+
   </script>
   
 </body>
