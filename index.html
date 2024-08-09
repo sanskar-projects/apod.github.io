@@ -1,44 +1,33 @@
 <html>
 <body>
-  <!-- Input field for user to enter a prompt -->
-  <input type="text" id="promptInput" placeholder="Enter your prompt here">
-  
-  <!-- Button to generate the story based on user input -->
-  <button id="generateBtn">Generate Story</button>
-
-  <!-- Import Map for the Google Generative AI -->
+  <!-- ... Your HTML and CSS -->
   <script type="importmap">
-    {
-      "imports": {
-        "@google/generative-ai": "https://esm.run/@google/generative-ai"
-      }
+  {
+    "imports": {
+      "@google/generative-ai": "https://esm.run/@google/generative-ai"
     }
-  </script>
-
+  }
+</script>
   <script type="module">
-    import { GoogleGenerativeAI } from "@google/generative-ai";
+      import { GoogleGenerativeAI } from "@google/generative-ai";
 
-    // Fetch your API_KEY
-    const API_KEY = "AIzaSyCmiAxUPWg0h9Ytj8iaecDrXughT6drPFY";
+      // Fetch your API_KEY
+      const API_KEY = "AIzaSyCmiAxUPWg0h9Ytj8iaecDrXughT6drPFY";
 
-    // Access your API key
-    const genAI = new GoogleGenerativeAI(API_KEY);
+      // Access your API key (see "Set up your API key" above)
+      const genAI = new GoogleGenerativeAI(API_KEY);
 
-    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+      const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash"});
+async function run() {
+  const prompt = "Write a story about an AI and magic"
 
-    async function run() {
-      // Get the user input from the input field
-      const prompt = document.getElementById("promptInput").value;
+  const result = await model.generateContent(prompt);
+  const response = await result.response;
+  const text = response.text();
+  console.log(text);
+}
 
-      // Generate content based on the user input
-      const result = await model.generateContent(prompt);
-      const response = await result.response;
-      const text = await response.text();
-      alert(text);
-    }
-
-    // Add an event listener to the button to call the run() function when clicked
-    document.getElementById("generateBtn").addEventListener("click", run);
+run();
   </script>
 </body>
 </html>
