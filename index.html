@@ -1,13 +1,16 @@
 <html>
 <body>
-  <!-- ... Your HTML and CSS -->
+  <!-- Add a button to trigger the run() function -->
+  <button onclick="run()">Generate Content</button>
+
   <script type="importmap">
   {
     "imports": {
       "@google/generative-ai": "https://esm.run/@google/generative-ai"
     }
   }
-</script>
+  </script>
+  
   <script type="module">
       import { GoogleGenerativeAI } from "@google/generative-ai";
 
@@ -17,17 +20,16 @@
       // Access your API key (see "Set up your API key" above)
       const genAI = new GoogleGenerativeAI(API_KEY);
 
-      const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash"});
-async function run() {
-  const prompt = "Write a story about an AI and magic"
+      const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
-  const result = await model.generateContent(prompt);
-  const response = await result.response;
-  const text = response.text();
-  alert(text);
-}
+      async function run() {
+          const prompt = "Write a story about an AI and magic";
 
-run();
+          const result = await model.generateContent(prompt);
+          const response = await result.response;
+          const text = await response.text(); // Ensure text is awaited properly
+          alert(text);
+      }
   </script>
 </body>
 </html>
