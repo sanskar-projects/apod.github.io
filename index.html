@@ -1,33 +1,46 @@
 <html>
 <body>
-  <!-- ... Your HTML and CSS -->
+  <!-- Your HTML and CSS -->
   <script type="importmap">
-  {
-    "imports": {
-      "@google/generative-ai": "https://esm.run/@google/generative-ai"
+    {
+      "imports": {
+        "@google/generative-ai": "https://esm.run/@google/generative-ai"
+      }
     }
-  }
-</script>
-  <script type="module">
-      import { GoogleGenerativeAI } from "@google/generative-ai";
-
-      // Fetch your API_KEY
-      const API_KEY = "AIzaSyCmiAxUPWg0h9Ytj8iaecDrXughT6drPFY";
-
-      // Access your API key (see "Set up your API key" above)
-      const genAI = new GoogleGenerativeAI(API_KEY);
-
-      const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash"});
-async function run() {
-  const prompt = "Write a story about an AI and magic"
-
-  const result = await model.generateContent(prompt);
-  const response = await result.response;
-  const text = response.text();
-  alert(text);
-}
-
-run();
   </script>
+  <script type="module">
+    import { GoogleGenerativeAI } from "@google/generative-ai";
+
+    // Fetch your API_KEY
+    const API_KEY = "AIzaSyCmiAxUPWg0h9Ytj8iaecDrXughT6drPFY";
+
+    // Access your API key (see "Set up your API key" above)
+    const genAI = new GoogleGenerativeAI(API_KEY);
+
+    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+
+    async function run() {
+      const prompt = document.getElementById("prompt-input").value;
+      if (!prompt) {
+        alert("Please enter a prompt.");
+        return;
+      }
+
+      try {
+        const result = await model.generateContent(prompt);
+        const response = await result.response;
+        const text = await response.text();
+        alert(text);
+      } catch (error) {
+        console.error("Error generating content:", error);
+        alert("Failed to generate content. Please try again.");
+      }
+    }
+  </script>
+
+  <h1>AI Content Generator</h1>
+  <label for="prompt-input">Enter your prompt:</label>
+  <input type="text" id="prompt-input" placeholder="Type your prompt here" />
+  <button onclick="run()">Generate Content</button>
 </body>
 </html>
