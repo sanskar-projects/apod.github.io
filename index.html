@@ -1,1 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Text To Speech</title>
+  <script>
+    function speak() {
+      const text = document.getElementById("x").value;
+      const utterance = new SpeechSynthesisUtterance(text);
+
+      // Set the default voice if available
+      const voices = speechSynthesis.getVoices();
+      if (voices.length > 0) {
+        utterance.voice = voices[0]; // Default voice
+      }
+
+      // Speak the text
+      speechSynthesis.speak(utterance);
+    }
+
+    // Ensure voices are loaded before speech synthesis works (important for offline use)
+    window.onload = function() {
+      if (!speechSynthesis.getVoices().length) {
+        speechSynthesis.onvoiceschanged = function() {
+          // Voices are now loaded
+        };
+      }
+    };
+  </script>
+</head>
+<body>
+  <main>
+    <h1>Text To Speech</h1>
+    <textarea id="x" rows="5" cols="50">Hello! This is a simple text-to-speech app.</textarea><br><br>
+    <button onclick="speak()">Speak</button>
+  </main>
+</body>
+</html>
 
