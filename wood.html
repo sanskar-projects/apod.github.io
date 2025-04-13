@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body style="background-color:black;">
+<script>
+const a=[
+"https://wallpapercave.com/wp/wp8289911.jpg"
+,"https://lh6.googleusercontent.com/-7B-YGIxgTAw/TXPmPMJC9cI/AAAAAAAAFz0/BXgFHi90zgk/s1600/09770_D29113002_122_404lo.JPG"
+,"https://th.bing.com/th/id/OIP.BxZlYjdKbWvHaeKjCpCg3QHaJO?rs=1&pid=ImgDetMain"
+,"https://i.pinimg.com/originals/32/df/34/32df345e4c1a10777de8798f5b9779a5.jpg"
+,"https://th.bing.com/th/id/R.b2769ba84bb264d80601c2c892becf07?rik=9jt3cgvI13z%2b1g&riu=http%3a%2f%2f3.bp.blogspot.com%2f-PpMKm2aY3zs%2fUQ_-5ikdcuI%2fAAAAAAABlus%2fVX3FpfRlv4M%2fs1600%2fAnushka%2bSharma%2bLatest%2bHot%2bPhoto%2bScans%2bof%2bMaxim%2b(1).jpg&ehk=gt3DTSUpIBse31mgUMOUc0VvvE9cn%2fqFFUxw0qHv5uk%3d&risl=&pid=ImgRaw&r=0"
+,"https://th.bing.com/th/id/OIP.MdwYYRYXOJlqiESVOesWBQHaNK?rs=1&pid=ImgDetMain"
+,"https://th.bing.com/th/id/OIP.yS4fuBENgEBzWnSp2TJlqAHaIO?rs=1&pid=ImgDetMain"
+,"https://i.pinimg.com/736x/9a/2f/f2/9a2ff2fb985a9625f0e95e519d649253--disha-patani-navel-bollywood.jpg"
+,"https://th.bing.com/th/id/OIP.PNJYXdiUDzUJSYgwVj9GCgHaK2?rs=1&pid=ImgDetMain"
+,"https://th.bing.com/th/id/OIP.QWg-_CSAOjzOKlUJOHIXJwHaLH?rs=1&pid=ImgDetMain"
+,"https://th.bing.com/th/id/OIP.Xs1zgFfW_vrZJa-gJ7786wHaJQ?rs=1&pid=ImgDetMain"
+,"https://i.pinimg.com/736x/9a/35/d6/9a35d6ec1bfe386da432a4e439a532de.jpg"
+,"https://th.bing.com/th/id/OIP.39z1UMRkZvat4kSH8jAb0gAAAA?rs=1&pid=ImgDetMain"
+
+,"https://th.bing.com/th/id/R.f44dd1fc68a80447e9702deb324ecf9e?rik=Jo7owBEUds7mIA&riu=http%3a%2f%2f2.bp.blogspot.com%2f-NvwY92pMK9s%2fTxzXiLLMuSI%2fAAAAAAAAkwc%2fh3uYQjDsDAc%2fs1600%2fJulianne%2bMoore.jpg&ehk=dvJiQeDSLmgEq7aukvAoG1QkVYFMULsZ7cO6XMEpah4%3d&risl=&pid=ImgRaw&r=0"
+,"https://th.bing.com/th/id/OIP.Xhhb0EZy5CQKkRg3obKT4gHaLE?rs=1&pid=ImgDetMain"
+,"https://img-9gag-fun.9cache.com/photo/ayoexVW_460s.jpg"
+,"https://i.pinimg.com/236x/3a/3a/54/3a3a54a72a5c792051b54634297b0836.jpg"
+,"https://i.pinimg.com/originals/3b/64/7f/3b647fd86720aea5adda4d8e0dd1a407.jpg"
+,"https://i.pinimg.com/originals/f4/9f/7b/f49f7b96369a8ec6e86d6707c6ecb04b.jpg"
+,"https://th.bing.com/th/id/OIP.VlIICL2CO-sSElYxz_Wg2AHaNJ?rs=1&pid=ImgDetMain"
+];
+const b=[
+"Deepika Padukone",
+"Kangana Ranaut",
+"Jacqueline Fernandez",
+"Katrina Kaif",
+"Anushka Sharma",
+"Shraddha Kapoor",
+"Parineeti Chopra",
+"Disha Patani",
+"Ileana D'Cruz",
+"Kriti Sanon",
+"Alia Bhatt",
+"Muskaan Mihani",
+"Harsha Khandeparkar",
+
+"Julianne Moore",
+"Brie Larson",
+"Emily Blunt",
+"Elizabeth Olsen",
+"Jennifer Aniston"
+"Amber Heard",
+"A. J. Cook",
+];
+function run()
+{
+const n=a.length-1;
+const x=Math.floor(Math.random()*(n-0+1))+0;
+document.getElementById("image").src=a[x];
+document.getElementById("name").innerHTML=b[x];
+document.getElementById("link").href="https://www.google.com/search?q="+b[x];
+}
+let k="";
+while(k!="s7")
+{
+k=prompt();
+}
+setInterval(run,1000);
+</script>
+<img id="image" style="height:100%; width:100%;">
+<a id="link" style="color:red;">
+<h1 id="name"></h1>
+</a>
+</body>
+</html>
